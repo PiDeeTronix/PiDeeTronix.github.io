@@ -2,11 +2,13 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #1a2a6c, #0d1b2a, #001f3f);
-  color: #e0e7ff;
+  background: radial-gradient(circle at center, #2a1a6c, #0d0b2a 60%, #000022 90%);
+  color: #c0c6e8; /* less bright text, cool purple-blue */
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Animated starry background */
@@ -15,24 +17,27 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background:
-    radial-gradient(2px 2px at 20% 30%, #fff9, transparent),
-    radial-gradient(1.5px 1.5px at 40% 70%, #fff8, transparent),
-    radial-gradient(1.2px 1.2px at 60% 50%, #fff7, transparent),
-    radial-gradient(1.8px 1.8px at 80% 20%, #fff9, transparent);
+    radial-gradient(2.5px 2.5px at 18% 28%, #c8d6ffbb, transparent),
+    radial-gradient(1.8px 1.8px at 38% 72%, #b3c4ffbb, transparent),
+    radial-gradient(1.5px 1.5px at 62% 53%, #a3b6ffcc, transparent),
+    radial-gradient(2.2px 2.2px at 83% 18%, #cbd5ffcc, transparent),
+    radial-gradient(circle at 70% 20%, #6b4fff33, #0a084f99 70%), /* subtle nebula glow */
+    radial-gradient(circle at 30% 80%, #7a6bff33, #120a6eaa 60%);
   background-repeat: repeat;
-  background-size: 200% 200%;
-  animation: starTwinkle 20s linear infinite;
+  background-size: 180% 180%;
+  animation: starTwinkle 25s linear infinite;
   z-index: -1;
   pointer-events: none;
+  filter: drop-shadow(0 0 8px #7f6fffaa);
 }
 
 @keyframes starTwinkle {
   0%, 100% {
-    background-position: 0% 0%, 0% 100%, 100% 0%, 100% 100%;
-    opacity: 0.7;
+    background-position: 0% 0%, 0% 100%, 100% 0%, 100% 100%, 70% 20%, 30% 80%;
+    opacity: 0.75;
   }
   50% {
-    background-position: 100% 100%, 100% 0%, 0% 100%, 0% 0%;
+    background-position: 100% 100%, 100% 0%, 0% 100%, 0% 0%, 50% 40%, 50% 60%;
     opacity: 1;
   }
 }
@@ -43,13 +48,13 @@ body::before {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(15, 20, 50, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(20, 20, 50, 0.65);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 0 15px 1px #00d4ff66;
-  border-bottom: 1px solid #00d4ff44;
+  box-shadow: 0 0 20px 2px #7a6bff66;
+  border-bottom: 1px solid #7a6bff44;
 }
 
 .logo {
@@ -61,28 +66,28 @@ body::before {
 .logo h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
-  color: #00e5ff;
+  color: #8a7fff;
   margin: 0;
-  text-shadow: 0 0 10px #00d4ffaa;
+  text-shadow: 0 0 12px #7a6bffcc;
 }
 
 .star-icon {
   width: 36px;
   height: 36px;
-  filter: drop-shadow(0 0 5px #00e5ff);
+  filter: drop-shadow(0 0 6px #7a6bffcc);
   animation: starPulse 3s ease-in-out infinite;
 }
 
 @keyframes starPulse {
-  0%, 100% { filter: drop-shadow(0 0 5px #00e5ff); transform: scale(1); }
-  50% { filter: drop-shadow(0 0 15px #00e5ff); transform: scale(1.1); }
+  0%, 100% { filter: drop-shadow(0 0 6px #7a6bffcc); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 20px #9a8fffcc); transform: scale(1.1); }
 }
 
 /* Navigation links */
 .nav-links a {
   margin-left: 1.5rem;
   text-decoration: none;
-  color: #b0dfffcc;
+  color: #a1aaffcc;
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s, text-shadow 0.3s;
@@ -94,7 +99,7 @@ body::before {
   display: block;
   width: 0%;
   height: 2px;
-  background: #00e5ff;
+  background: #7a6bff;
   transition: width 0.3s;
   position: absolute;
   bottom: -4px;
@@ -102,8 +107,8 @@ body::before {
 }
 
 .nav-links a:hover {
-  color: #00e5ff;
-  text-shadow: 0 0 8px #00e5ff;
+  color: #7a6bff;
+  text-shadow: 0 0 8px #7a6bff;
 }
 
 .nav-links a:hover::after {
@@ -113,12 +118,12 @@ body::before {
 .menu-icon {
   font-size: 1.8rem;
   cursor: pointer;
-  color: #00e5ffcc;
+  color: #7a6bffcc;
   transition: color 0.3s;
 }
 
 .menu-icon:hover {
-  color: #00e5ff;
+  color: #7a6bff;
 }
 
 /* Hero section */
@@ -138,41 +143,40 @@ body::before {
 .hero h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #00e5ff;
+  color: #8a7fff;
   text-shadow:
-    0 0 10px #00e5ff88,
-    0 0 20px #00b7ffaa;
+    0 0 15px #7a6bffaa,
+    0 0 30px #5f52ffbb;
 }
 
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
-  color: #a0d7ffcc;
+  color: #aaaaffcc;
   line-height: 1.5;
-  text-shadow: 0 0 5px #0077b6aa;
+  text-shadow: 0 0 6px #4a3e9caa;
 }
 
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #00e5ff, #006aff);
-  color: #000;
+  background: linear-gradient(135deg, #7a6bff, #4a3e9c);
+  color: #eee;
   padding: 0.9rem 2.2rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 50px;
   box-shadow:
-    0 0 10px #00e5ffcc,
-    0 0 20px #006affaa;
+    0 0 15px #7a6bffcc,
+    0 0 25px #4a3e9cbb;
   transition: background 0.4s, box-shadow 0.4s;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0099ff, #0044cc);
+  background: linear-gradient(135deg, #5f52ff, #352e7a);
   box-shadow:
-    0 0 25px #0099ffcc,
-    0 0 40px #0044ccbb;
+    0 0 35px #5f52ffcc,
+    0 0 50px #352e7abb;
 }
-
 
 /* === Resources page styles === */
 
@@ -181,24 +185,24 @@ body::before {
   margin: 4rem auto;
   padding: 2rem 2rem 3rem;
   text-align: center;
-  color: #eee;
-  background: rgba(20, 20, 40, 0.6);
+  color: #ddd;
+  background: rgba(40, 35, 70, 0.75);
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px #7a6bff88;
+  backdrop-filter: blur(12px);
   font-size: 1.1rem;
 }
 
 .resources-content h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.8rem;
-  color: #ffd700;
+  color: #7a6bff;
   margin-bottom: 1rem;
-  text-shadow: 0 0 8px #ffd700;
+  text-shadow: 0 0 10px #7a6bffcc;
 }
 
 .resources-content p {
-  color: #ccc;
+  color: #bbb;
   margin-bottom: 2rem;
   line-height: 1.5;
 }
@@ -213,21 +217,21 @@ body::before {
 }
 
 .resource-list li {
-  background: rgba(255, 215, 0, 0.1);
-  border: 1.5px solid #ffd700;
+  background: rgba(122, 107, 255, 0.12);
+  border: 1.5px solid #7a6bff;
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
-  box-shadow: 0 0 10px #ffd70033;
+  box-shadow: 0 0 15px #7a6bff33;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resource-list li:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 20px #ffd700cc;
+  box-shadow: 0 0 30px #7a6bffcc;
 }
 
 .resource-list a {
-  color: #ffd700;
+  color: #7a6bff;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -236,19 +240,19 @@ body::before {
 
 .resource-list a:hover {
   text-decoration: underline;
-  color: #fff;
+  color: #dcdcff;
 }
 
 .footer-note {
   font-style: italic;
-  color: #bbb;
+  color: #9999bb;
   font-size: 1rem;
 }
 
 /* Active link highlight */
 .nav-links a.active,
 .nav-links a:hover {
-  color: #ffd700;
+  color: #7a6bff;
   font-weight: 700;
-  text-shadow: 0 0 6px #ffd700aa;
+  text-shadow: 0 0 10px #7a6bffcc;
 }
