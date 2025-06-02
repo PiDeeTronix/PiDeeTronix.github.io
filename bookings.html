@@ -2,70 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AstraMentor - Bookings</title>
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* NAVBAR STYLES FOR CONSISTENT SPACING */
+    /* --- NAVBAR STYLES --- */
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      /* removed gap to avoid uneven spacing */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #F0F2F5;
+      color: #495C72;
     }
 
-    .nav-links > a,
-    .nav-links > .dropdown > a {
+    header.navbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1E293B;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 3rem;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      user-select: none;
+      color: #A02CBD;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 0.7rem;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem; /* THIS MAKES CONSISTENT SPACING */
+      flex-grow: 1;
+    }
+
+    nav.nav-links a {
       color: #ADB7C0;
-      font-weight: 600;
-      padding: 0.5rem 0.8rem;
       text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0;
       user-select: none;
       white-space: nowrap;
       transition: color 0.3s ease;
-      margin-right: 1.3rem; /* consistent spacing */
       cursor: pointer;
-      display: inline-block;
     }
 
-    .nav-links > a:last-child,
-    .nav-links > .dropdown > a:last-child {
-      margin-right: 0; /* no margin on last item */
-    }
-
-    .nav-links > .dropdown:hover > a,
-    .nav-links > a.active {
+    nav.nav-links a.active,
+    nav.nav-links a:hover {
       color: #A02CBD;
       font-weight: 700;
       text-shadow: 0 0 10px #D8AEEE;
     }
 
+    /* Dropdown styles */
+    .dropdown {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .dropdown > a::after {
+      content: " ▼";
+      font-size: 0.7rem;
+    }
+
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 2.8rem;
+      top: 2.6rem;
       left: 0;
-      background: rgba(73, 92, 114, 0.85);
-      box-shadow: 0 4px 10px #A02CBD88;
-      border-radius: 8px;
-      min-width: 150px;
-      z-index: 10;
+      background-color: #2E4053;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(160, 44, 189, 0.4);
+      min-width: 160px;
+      z-index: 1000;
       padding: 0.5rem 0;
     }
 
     .dropdown-content a {
       display: block;
-      padding: 0.6rem 1rem;
+      padding: 0.6rem 1.2rem;
       color: #ADB7C0;
       font-weight: 500;
-      text-decoration: none;
-      transition: background 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
     }
 
     .dropdown-content a:hover {
-      background: #A02CBD;
-      color: #495C72;
+      background-color: #A02CBD;
+      color: #fff;
       font-weight: 700;
       text-shadow: 0 0 8px #D8AEEE;
     }
@@ -74,75 +107,57 @@
       display: block;
     }
 
-    /* Adjust menu-icon for mobile or small screens */
-    .menu-icon {
-      cursor: pointer;
-      color: #ADB7C0;
-      font-size: 1.4rem;
-      margin-left: auto;
-    }
-
-    /* Additional styling for bookings page content */
+    /* Main content styles */
     main {
       max-width: 700px;
       margin: 2rem auto;
-      font-family: 'Inter', sans-serif;
-      color: #495C72;
       padding: 0 1rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(160, 44, 189, 0.2);
     }
 
     h2 {
-      color: #A02CBD;
       font-family: 'Orbitron', sans-serif;
-      margin-bottom: 1rem;
       text-align: center;
+      color: #A02CBD;
+      margin-bottom: 1.5rem;
     }
 
-    form {
-      background: rgba(73, 92, 114, 0.1);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #A02CBD33;
-    }
-
-    label {
+    form label {
       display: block;
       margin-bottom: 0.4rem;
       font-weight: 600;
     }
 
-    input, select, textarea {
+    form input,
+    form select,
+    form textarea {
       width: 100%;
       padding: 0.5rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       border: 1.5px solid #A02CBD;
-      border-radius: 5px;
+      border-radius: 6px;
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
       color: #495C72;
-      background: white;
-      transition: border-color 0.3s ease;
     }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: #D8AEEE;
-      outline: none;
-    }
-
-    button {
+    form button {
       background-color: #A02CBD;
-      color: #fff;
+      color: white;
       border: none;
       padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
       font-weight: 700;
+      font-size: 1.1rem;
       border-radius: 8px;
       cursor: pointer;
+      width: 100%;
       box-shadow: 0 0 10px #D8AEEE;
       transition: background-color 0.3s ease;
     }
 
-    button:hover {
+    form button:hover {
       background-color: #8B229D;
     }
   </style>
@@ -150,18 +165,13 @@
 <body>
   <header class="navbar">
     <div class="logo">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png"
-        alt="Star Logo"
-        class="star-icon"
-        style="height: 40px; margin-right: 0.7rem;"
-      />
-      <h1>AstraMentor</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png" alt="Star Logo" />
+      AstraMentor
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="tutors.html">Tutors ▼</a>
+        <a href="tutors.html">Tutors</a>
         <div class="dropdown-content">
           <a href="#">Abhiram</a>
           <a href="#">Swarup</a>
@@ -172,7 +182,6 @@
       </div>
       <a href="bookings.html" class="active">Bookings</a>
       <a href="resources.html">Resources</a>
-      <a href="#" class="menu-icon">☰</a>
     </nav>
   </header>
 
