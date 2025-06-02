@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
+    /* Navbar styling consistent with exemplar */
     body {
       background: linear-gradient(135deg, #2c2c54, #1b1b38);
       color: #c0c6e4;
@@ -27,6 +28,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      user-select: none;
     }
 
     .logo {
@@ -127,7 +129,7 @@
       cursor: pointer;
     }
 
-    /* Bookings content */
+    /* Main bookings section */
     .bookings-content {
       background: rgba(60, 55, 120, 0.7);
       backdrop-filter: blur(10px);
@@ -138,6 +140,7 @@
       box-shadow: 0 0 30px #9a87ffcc;
       text-align: center;
       margin-top: 3rem;
+      user-select: text;
     }
 
     .bookings-content h2 {
@@ -169,7 +172,7 @@
   </style>
 </head>
 <body>
-  <header class="navbar">
+  <header class="navbar" role="banner">
     <div class="logo">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png"
@@ -178,7 +181,7 @@
       />
       <h1>AstraMentor</h1>
     </div>
-    <nav class="nav-links">
+    <nav class="nav-links" role="navigation" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <div class="dropdown">
         <a href="tutors.html">Tutors ▼</a>
@@ -192,18 +195,18 @@
       </div>
       <a href="bookings.html" class="active">Bookings</a>
       <a href="resources.html">Resources</a>
-      <a href="#" class="menu-icon" aria-label="Menu">☰</a> <!-- Do not remove -->
+      <a href="#" class="menu-icon" aria-label="Menu">☰</a>
     </nav>
   </header>
 
-  <section class="bookings-content" role="main">
+  <main class="bookings-content" role="main">
     <h2>Book Your Tutoring Session</h2>
     <p>Ready to take the next step in your learning journey? Choose your tutor, pick a convenient time, and get personalised support tailored just for you.</p>
     <p>Use the form below to book a session or contact us if you have any questions.</p>
 
-    <div class="booking-form-placeholder">
+    <div class="booking-form-placeholder" aria-live="polite" aria-atomic="true">
       <p><em>Booking form coming soon!</em></p>
     </div>
-  </section>
+  </main>
 </body>
 </html>
