@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AstraMentor - Tutors</title>
+  <title>AstraMentor - Bookings</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* Dropdown styles consistent with theme */
     .nav-links {
       position: relative;
       display: flex;
@@ -69,12 +68,65 @@
       display: block;
     }
 
-    /* Adjust menu-icon for mobile or small screens */
     .menu-icon {
       cursor: pointer;
       color: #ADB7C0;
       font-size: 1.4rem;
       margin-left: auto;
+    }
+
+    .booking-section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #ADB7C0;
+    }
+
+    .booking-section h2 {
+      font-size: 2.2rem;
+      color: #A02CBD;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #D8AEEE;
+    }
+
+    .booking-section p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .booking-form {
+      background: rgba(73, 92, 114, 0.2);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(160, 44, 189, 0.3);
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .booking-form button {
+      background: #A02CBD;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .booking-form button:hover {
+      background: #8B25A5;
+      box-shadow: 0 0 10px #D8AEEE;
     }
   </style>
 </head>
@@ -91,7 +143,7 @@
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="tutors.html" class="active">Tutors ▼</a>
+        <a href="tutors.html">Tutors ▼</a>
         <div class="dropdown-content">
           <a href="#">Abhiram</a>
           <a href="#">Swarup</a>
@@ -100,16 +152,31 @@
           <a href="#">Rakshan</a>
         </div>
       </div>
-      <a href="bookings.html">Bookings</a>
+      <a href="bookings.html" class="active">Bookings</a>
       <a href="resources.html">Resources</a>
       <a href="#" class="menu-icon">☰</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Meet our tutors</h2>
-    <p>Learn about the amazing tutors ready to help you.</p>
-    <a href="#" class="btn-primary">Meet Our Tutors</a>
+  <section class="booking-section">
+    <h2>Book a Session</h2>
+    <p>Fill out the form below to book a session with one of our tutors.</p>
+    <form class="booking-form">
+      <input type="text" name="name" placeholder="Your Full Name" required />
+      <input type="email" name="email" placeholder="Your Email Address" required />
+      <select name="tutor" required>
+        <option value="">Select a Tutor</option>
+        <option value="abhiram">Abhiram</option>
+        <option value="swarup">Swarup</option>
+        <option value="avanish">Avanish</option>
+        <option value="noah">Noah</option>
+        <option value="rakshan">Rakshan</option>
+      </select>
+      <input type="date" name="date" required />
+      <input type="time" name="time" required />
+      <textarea name="message" rows="4" placeholder="Additional Information (optional)"></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
   </section>
 </body>
 </html>
