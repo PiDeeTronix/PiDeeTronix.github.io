@@ -1,24 +1,35 @@
 // Flip tutor cards on click
 function flipCard(card) {
-  card.classList.toggle('flipped');
+  if (card) {
+    card.classList.toggle('flipped');
+  }
 }
 
 // Sidebar toggle
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('sidebar').classList.toggle('active');
-});
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
 
-// Hide nav on scroll down
+if (hamburger && sidebar) {
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+}
+
+// Hide navbar on scroll down and show on scroll up
 let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > lastScrollY) {
-    navbar.style.top = '-80px';
-  } else {
-    navbar.style.top = '0';
-  }
-  lastScrollY = window.scrollY;
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      navbar.style.top = '-80px';
+    } else {
+      // Scrolling up
+      navbar.style.top = '0';
+    }
+    lastScrollY = window.scrollY;
+  });
+}
 
 // Optional: Stardust cursor (to be added later)
