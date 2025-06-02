@@ -1,1 +1,81 @@
+<!-- bookings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AstraMentor - Bookings</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo glow-hover">
+      AstraMentor <span class="star-icon">★</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="bookings.html" class="active">Bookings</a>
+      <a href="tutors.html">Tutors</a>
+      <a href="resources.html">Resources</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+    <a href="contact.html">Contact Us</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="subjects.html">Our Subjects</a>
+  </aside>
+
+  <main class="bookings-container">
+    <h1>Book a Session</h1>
+    <form class="booking-form" id="bookingForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" name="studentName" placeholder="Your full name" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+
+      <label for="subject">Subject:</label>
+      <select id="subject" name="subject" required>
+        <option value="" disabled selected>Select subject</option>
+        <option>Mathematics</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Biology</option>
+        <option>Computer Science</option>
+        <option>English</option>
+        <option>French</option>
+        <option>Design Technology</option>
+        <option>Business Studies</option>
+      </select>
+
+      <label for="tutor">Preferred Tutor:</label>
+      <select id="tutor" name="tutor" required>
+        <option value="" disabled selected>Select tutor</option>
+        <option>Abhiram</option>
+        <option>Swarup</option>
+        <option>Rakshan</option>
+        <option>Avanish</option>
+        <option>Noah</option>
+      </select>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <button type="submit" class="btn btn-primary">Submit Booking</button>
+    </form>
+  </main>
+
+</body>
+</html>
 
