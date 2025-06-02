@@ -157,3 +157,98 @@ h1 {
     display: none;
   }
 }
+/* Hero Section */
+.hero-section {
+  height: calc(100vh - 80px); /* full viewport minus navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #1a1a4d 0%, #00001a 80%);
+  padding: 0 2rem;
+  text-align: center;
+  color: #e0e0ff;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #bbbbee;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(100, 75, 255, 0.3);
+  user-select: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6e78ff, #b2b6ff);
+  box-shadow: 0 6px 15px rgba(130, 130, 255, 0.6);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #c266ff, #fbc2eb);
+  color: #3a0050;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #db8aff, #fcd9f3);
+  box-shadow: 0 6px 15px rgba(255, 150, 220, 0.7);
+}
+
+.btn-tertiary {
+  background: transparent;
+  color: #a3a3ff;
+  border: 2px solid #a3a3ff;
+}
+
+.btn-tertiary:hover {
+  background: #a3a3ff;
+  color: #121250;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
