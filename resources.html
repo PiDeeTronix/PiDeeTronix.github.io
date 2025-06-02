@@ -7,34 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
   <style>
     body {
-      <nav class="navbar">
-  <div class="logo glow-hover">
-    MySite
-    <span class="star-icon">★</span>
-  </div>
-
-  <div class="nav-links">
-    <a href="index.html" class="">Home</a>
-    <a href="resources.html" class="active">Resources</a>
-    <a href="tutors.html">Tutors</a>
-    <a href="booking.html">Booking</a>
-  </div>
-
-  <div id="hamburger" class="hamburger">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-</nav>
-
-<!-- Sidebar for mobile -->
-<div id="sidebar" class="sidebar">
-  <a href="index.html">Home</a>
-  <a href="resources.html" class="active">Resources</a>
-  <a href="tutors.html">Tutors</a>
-  <a href="booking.html">Booking</a>
-</div>
-
       margin: 0;
       font-family: 'Quicksand', sans-serif;
       background: radial-gradient(ellipse at center, #090b2b 0%, #000 100%);
@@ -74,9 +46,141 @@
     ul.resource-list li a:hover {
       border-bottom-color: #c266ff;
     }
+
+    /* Navbar styles (assuming similar to your other pages) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #1a1a40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: top 0.3s ease;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #8f94fb;
+      cursor: default;
+      display: flex;
+      align-items: center;
+    }
+    .star-icon {
+      margin-left: 6px;
+      color: #c266ff;
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #8f94fb;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 8px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background-color: #c266ff;
+      color: #fff;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #8f94fb;
+      border-radius: 2px;
+    }
+
+    /* Sidebar for mobile */
+    .sidebar {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 200px;
+      height: calc(100% - 60px);
+      background-color: #1a1a40;
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+    }
+    .sidebar a {
+      color: #8f94fb;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 4px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+    .sidebar a.active, .sidebar a:hover {
+      background-color: #c266ff;
+      color: #fff;
+    }
+    .sidebar.active {
+      display: flex;
+    }
+
+    /* Responsive: show hamburger on small screens */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Padding top so content not hidden behind fixed navbar */
+    .resources-container {
+      padding-top: 80px;
+    }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo glow-hover">
+      MySite
+      <span class="star-icon">★</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="tutors.html">Tutors</a>
+      <a href="booking.html">Booking</a>
+    </div>
+
+    <div id="hamburger" class="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+
+  <!-- Sidebar for mobile -->
+  <div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="resources.html" class="active">Resources</a>
+    <a href="tutors.html">Tutors</a>
+    <a href="booking.html">Booking</a>
+  </div>
+
   <div class="resources-container">
     <h1>Resources</h1>
     <ul class="resource-list">
@@ -86,6 +190,7 @@
       <!-- Add more resources here -->
     </ul>
   </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
-
