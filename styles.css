@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at center, #2a1a6c, #0d0b2a 60%, #000022 90%);
-  color: #c0c6e8; /* less bright text, cool purple-blue */
+  background: radial-gradient(circle at center, #A02CBD, #495C72 60%, #2d3650 90%);
+  color: #ADB7C0; /* lighter text for contrast */
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -17,18 +17,18 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background:
-    radial-gradient(2.5px 2.5px at 18% 28%, #c8d6ffbb, transparent),
-    radial-gradient(1.8px 1.8px at 38% 72%, #b3c4ffbb, transparent),
-    radial-gradient(1.5px 1.5px at 62% 53%, #a3b6ffcc, transparent),
-    radial-gradient(2.2px 2.2px at 83% 18%, #cbd5ffcc, transparent),
-    radial-gradient(circle at 70% 20%, #6b4fff33, #0a084f99 70%), /* subtle nebula glow */
-    radial-gradient(circle at 30% 80%, #7a6bff33, #120a6eaa 60%);
+    radial-gradient(2.5px 2.5px at 18% 28%, #D8AEEEBB, transparent),
+    radial-gradient(1.8px 1.8px at 38% 72%, #BFC8D2BB, transparent),
+    radial-gradient(1.5px 1.5px at 62% 53%, #ADB7C0CC, transparent),
+    radial-gradient(2.2px 2.2px at 83% 18%, #D8AEEECC, transparent),
+    radial-gradient(circle at 70% 20%, #718D8F33, #495C7299 70%), /* subtle nebula glow */
+    radial-gradient(circle at 30% 80%, #A02CBD33, #495C72AA 60%);
   background-repeat: repeat;
   background-size: 180% 180%;
   animation: starTwinkle 25s linear infinite;
   z-index: -1;
   pointer-events: none;
-  filter: drop-shadow(0 0 8px #7f6fffaa);
+  filter: drop-shadow(0 0 8px #A02CBDAA);
 }
 
 @keyframes starTwinkle {
@@ -48,13 +48,13 @@ body::before {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(20, 20, 50, 0.65);
+  background: rgba(40, 40, 60, 0.65);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 0 20px 2px #7a6bff66;
-  border-bottom: 1px solid #7a6bff44;
+  box-shadow: 0 0 20px 2px #A02CBD66;
+  border-bottom: 1px solid #A02CBD44;
 }
 
 .logo {
@@ -66,28 +66,28 @@ body::before {
 .logo h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
-  color: #8a7fff;
+  color: #D8AEEE;
   margin: 0;
-  text-shadow: 0 0 12px #7a6bffcc;
+  text-shadow: 0 0 12px #A02CBDCC;
 }
 
 .star-icon {
   width: 36px;
   height: 36px;
-  filter: drop-shadow(0 0 6px #7a6bffcc);
+  filter: drop-shadow(0 0 6px #A02CBDCC);
   animation: starPulse 3s ease-in-out infinite;
 }
 
 @keyframes starPulse {
-  0%, 100% { filter: drop-shadow(0 0 6px #7a6bffcc); transform: scale(1); }
-  50% { filter: drop-shadow(0 0 20px #9a8fffcc); transform: scale(1.1); }
+  0%, 100% { filter: drop-shadow(0 0 6px #A02CBDCC); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 20px #D8AEEECC); transform: scale(1.1); }
 }
 
 /* Navigation links */
 .nav-links a {
   margin-left: 1.5rem;
   text-decoration: none;
-  color: #a1aaffcc;
+  color: #ADB7C0CC;
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s, text-shadow 0.3s;
@@ -99,7 +99,7 @@ body::before {
   display: block;
   width: 0%;
   height: 2px;
-  background: #7a6bff;
+  background: #A02CBD;
   transition: width 0.3s;
   position: absolute;
   bottom: -4px;
@@ -107,8 +107,8 @@ body::before {
 }
 
 .nav-links a:hover {
-  color: #7a6bff;
-  text-shadow: 0 0 8px #7a6bff;
+  color: #A02CBD;
+  text-shadow: 0 0 8px #A02CBD;
 }
 
 .nav-links a:hover::after {
@@ -118,12 +118,12 @@ body::before {
 .menu-icon {
   font-size: 1.8rem;
   cursor: pointer;
-  color: #7a6bffcc;
+  color: #A02CBDCC;
   transition: color 0.3s;
 }
 
 .menu-icon:hover {
-  color: #7a6bff;
+  color: #A02CBD;
 }
 
 /* Hero section */
@@ -143,39 +143,39 @@ body::before {
 .hero h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #8a7fff;
+  color: #D8AEEE;
   text-shadow:
-    0 0 15px #7a6bffaa,
-    0 0 30px #5f52ffbb;
+    0 0 15px #A02CBDAA,
+    0 0 30px #8045b9bb;
 }
 
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
-  color: #aaaaffcc;
+  color: #ADB7C0CC;
   line-height: 1.5;
-  text-shadow: 0 0 6px #4a3e9caa;
+  text-shadow: 0 0 6px #495C72AA;
 }
 
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #7a6bff, #4a3e9c);
-  color: #eee;
+  background: linear-gradient(135deg, #A02CBD, #495C72);
+  color: #D8AEEE;
   padding: 0.9rem 2.2rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 50px;
   box-shadow:
-    0 0 15px #7a6bffcc,
-    0 0 25px #4a3e9cbb;
+    0 0 15px #A02CBDCC,
+    0 0 25px #495C7299;
   transition: background 0.4s, box-shadow 0.4s;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #5f52ff, #352e7a);
+  background: linear-gradient(135deg, #8045b9, #3b4a62);
   box-shadow:
-    0 0 35px #5f52ffcc,
-    0 0 50px #352e7abb;
+    0 0 35px #8045b9CC,
+    0 0 50px #3b4a6288;
 }
 
 /* === Resources page styles === */
@@ -185,10 +185,10 @@ body::before {
   margin: 4rem auto;
   padding: 2rem 2rem 3rem;
   text-align: center;
-  color: #ddd;
-  background: rgba(40, 35, 70, 0.75);
+  color: #ADB7C0;
+  background: rgba(71, 92, 114, 0.75);
   border-radius: 12px;
-  box-shadow: 0 0 25px #7a6bff88;
+  box-shadow: 0 0 25px #A02CBD88;
   backdrop-filter: blur(12px);
   font-size: 1.1rem;
 }
@@ -196,13 +196,13 @@ body::before {
 .resources-content h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.8rem;
-  color: #7a6bff;
+  color: #A02CBD;
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px #7a6bffcc;
+  text-shadow: 0 0 10px #A02CBDCC;
 }
 
 .resources-content p {
-  color: #bbb;
+  color: #ADB7C0;
   margin-bottom: 2rem;
   line-height: 1.5;
 }
@@ -217,21 +217,21 @@ body::before {
 }
 
 .resource-list li {
-  background: rgba(122, 107, 255, 0.12);
-  border: 1.5px solid #7a6bff;
+  background: rgba(208, 174, 238, 0.12);
+  border: 1.5px solid #A02CBD;
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
-  box-shadow: 0 0 15px #7a6bff33;
+  box-shadow: 0 0 15px #A02CBD33;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resource-list li:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 30px #7a6bffcc;
+  box-shadow: 0 0 30px #A02CBDCC;
 }
 
 .resource-list a {
-  color: #7a6bff;
+  color: #A02CBD;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -240,19 +240,19 @@ body::before {
 
 .resource-list a:hover {
   text-decoration: underline;
-  color: #dcdcff;
+  color: #D8AEEE;
 }
 
 .footer-note {
   font-style: italic;
-  color: #9999bb;
+  color: #718D8F;
   font-size: 1rem;
 }
 
 /* Active link highlight */
 .nav-links a.active,
 .nav-links a:hover {
-  color: #7a6bff;
+  color: #A02CBD;
   font-weight: 700;
-  text-shadow: 0 0 10px #7a6bffcc;
+  text-shadow: 0 0 10px #A02CBDCC;
 }
