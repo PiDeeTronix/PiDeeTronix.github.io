@@ -2,103 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AstraMentor - Bookings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstraMentor - Tutors</title>
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* --- NAVBAR STYLES --- */
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #F0F2F5;
-      color: #495C72;
-    }
-
-    header.navbar {
-      display: flex;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #1E293B;
-      color: white;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      margin-right: 3rem;
-      font-weight: 700;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.5rem;
-      user-select: none;
-      color: #A02CBD;
-    }
-
-    .logo img {
-      height: 40px;
-      margin-right: 0.7rem;
-    }
-
-    nav.nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem; /* THIS MAKES CONSISTENT SPACING */
-      flex-grow: 1;
-    }
-
-    nav.nav-links a {
-      color: #ADB7C0;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 0;
-      user-select: none;
-      white-space: nowrap;
-      transition: color 0.3s ease;
-      cursor: pointer;
-    }
-
-    nav.nav-links a.active,
-    nav.nav-links a:hover {
-      color: #A02CBD;
-      font-weight: 700;
-      text-shadow: 0 0 10px #D8AEEE;
-    }
-
-    /* Dropdown styles */
-    .dropdown {
+    /* Dropdown styles consistent with theme */
+    .nav-links {
       position: relative;
-      cursor: pointer;
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
     }
 
-    .dropdown > a::after {
-      content: " ▼";
-      font-size: 0.7rem;
+    .nav-links > .dropdown {
+      position: relative;
+    }
+
+    .nav-links > .dropdown > a {
+      cursor: pointer;
+      color: #ADB7C0;
+      font-weight: 600;
+      padding: 0.5rem 0.7rem;
+      display: inline-block;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .nav-links > .dropdown:hover > a,
+    .nav-links > .dropdown > a.active {
+      color: #A02CBD;
+      text-shadow: 0 0 10px #D8AEEE;
+      font-weight: 700;
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 2.6rem;
+      top: 2.8rem;
       left: 0;
-      background-color: #2E4053;
-      border-radius: 6px;
-      box-shadow: 0 4px 8px rgba(160, 44, 189, 0.4);
-      min-width: 160px;
-      z-index: 1000;
+      background: rgba(73, 92, 114, 0.85);
+      box-shadow: 0 4px 10px #A02CBD88;
+      border-radius: 8px;
+      min-width: 150px;
+      z-index: 10;
       padding: 0.5rem 0;
     }
 
     .dropdown-content a {
       display: block;
-      padding: 0.6rem 1.2rem;
+      padding: 0.6rem 1rem;
       color: #ADB7C0;
       font-weight: 500;
-      white-space: nowrap;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .dropdown-content a:hover {
-      background-color: #A02CBD;
-      color: #fff;
+      background: #A02CBD;
+      color: #495C72;
       font-weight: 700;
       text-shadow: 0 0 8px #D8AEEE;
     }
@@ -107,71 +69,29 @@
       display: block;
     }
 
-    /* Main content styles */
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(160, 44, 189, 0.2);
-    }
-
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      color: #A02CBD;
-      margin-bottom: 1.5rem;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-    }
-
-    form input,
-    form select,
-    form textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1.5px solid #A02CBD;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-      color: #495C72;
-    }
-
-    form button {
-      background-color: #A02CBD;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 8px;
+    /* Adjust menu-icon for mobile or small screens */
+    .menu-icon {
       cursor: pointer;
-      width: 100%;
-      box-shadow: 0 0 10px #D8AEEE;
-      transition: background-color 0.3s ease;
-    }
-
-    form button:hover {
-      background-color: #8B229D;
+      color: #ADB7C0;
+      font-size: 1.4rem;
+      margin-left: auto;
     }
   </style>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png" alt="Star Logo" />
-      AstraMentor
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png"
+        alt="Star Logo"
+        class="star-icon"
+      />
+      <h1>AstraMentor</h1>
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="tutors.html">Tutors</a>
+        <a href="tutors.html" class="active">Tutors ▼</a>
         <div class="dropdown-content">
           <a href="#">Abhiram</a>
           <a href="#">Swarup</a>
@@ -180,41 +100,16 @@
           <a href="#">Rakshan</a>
         </div>
       </div>
-      <a href="bookings.html" class="active">Bookings</a>
+      <a href="bookings.html">Bookings</a>
       <a href="resources.html">Resources</a>
+      <a href="#" class="menu-icon">☰</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Book a Session</h2>
-    <form action="#" method="POST">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
-      <label for="tutor">Select Tutor</label>
-      <select id="tutor" name="tutor" required>
-        <option value="" disabled selected>Select a tutor</option>
-        <option value="Abhiram">Abhiram</option>
-        <option value="Swarup">Swarup</option>
-        <option value="Avanish">Avanish</option>
-        <option value="Noah">Noah</option>
-        <option value="Rakshan">Rakshan</option>
-      </select>
-
-      <label for="date">Preferred Date</label>
-      <input type="date" id="date" name="date" required />
-
-      <label for="time">Preferred Time</label>
-      <input type="time" id="time" name="time" required />
-
-      <label for="notes">Additional Notes</label>
-      <textarea id="notes" name="notes" rows="4" placeholder="Any extra details..."></textarea>
-
-      <button type="submit">Book Now</button>
-    </form>
-  </main>
+  <section class="hero">
+    <h2>Meet our tutors</h2>
+    <p>Learn about the amazing tutors ready to help you.</p>
+    <a href="#" class="btn-primary">Meet Our Tutors</a>
+  </section>
 </body>
 </html>
