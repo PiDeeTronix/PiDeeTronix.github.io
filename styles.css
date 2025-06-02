@@ -1,0 +1,27 @@
+/* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0f23;      /* deep navy */
+  color: #e0e6f8;                  /* light text */
+  font-family: 'Inter', sans-serif;
+}
+
+.logo h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffc657; /* gold accent */
+  color: #0d0f23;
+  text-decoration: none;
+  border-radius: 8px;
+}
