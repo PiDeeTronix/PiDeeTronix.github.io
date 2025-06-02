@@ -2,93 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AstraMentor - Bookings</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* Navbar styling consistent with exemplar */
-    body {
-      background: linear-gradient(135deg, #2c2c54, #1b1b38);
-      color: #c0c6e4;
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .navbar {
-      width: 100%;
-      padding: 1rem 2rem;
-      background: rgba(30, 30, 60, 0.85);
-      box-shadow: 0 0 15px #7b6cff88;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      user-select: none;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2rem;
-      color: #9a87ff;
-      margin: 0;
-      text-shadow: 0 0 8px #9a87ffcc;
-    }
-
-    .star-icon {
-      width: 40px;
-      height: 40px;
-      filter: drop-shadow(0 0 5px #a599ff);
-      animation: starPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes starPulse {
-      0%, 100% { filter: drop-shadow(0 0 5px #a599ff); transform: scale(1); }
-      50% { filter: drop-shadow(0 0 15px #a599ff); transform: scale(1.1); }
-    }
-
-    /* Navbar links */
+    /* Reuse nav styles from your theme */
     .nav-links {
+      position: relative;
       display: flex;
       gap: 1.2rem;
       align-items: center;
     }
-
-    .nav-links > a,
+    .nav-links > .dropdown {
+      position: relative;
+    }
     .nav-links > .dropdown > a {
       cursor: pointer;
       color: #ADB7C0;
       font-weight: 600;
       padding: 0.5rem 0.7rem;
-      text-decoration: none;
+      display: inline-block;
       transition: color 0.3s ease;
       user-select: none;
     }
-
-    .nav-links > a:hover,
-    .nav-links > .dropdown > a:hover,
-    .nav-links > .dropdown > a.active,
-    .nav-links > a.active {
+    .nav-links > .dropdown:hover > a,
+    .nav-links > .dropdown > a.active {
       color: #A02CBD;
       text-shadow: 0 0 10px #D8AEEE;
       font-weight: 700;
     }
-
-    /* Dropdown styling */
-    .dropdown {
-      position: relative;
-    }
-
     .dropdown-content {
       display: none;
       position: absolute;
@@ -101,7 +44,6 @@
       z-index: 10;
       padding: 0.5rem 0;
     }
-
     .dropdown-content a {
       display: block;
       padding: 0.6rem 1rem;
@@ -110,69 +52,158 @@
       text-decoration: none;
       transition: background 0.3s ease, color 0.3s ease;
     }
-
     .dropdown-content a:hover {
       background: #A02CBD;
       color: #495C72;
       font-weight: 700;
       text-shadow: 0 0 8px #D8AEEE;
     }
-
     .dropdown:hover .dropdown-content {
       display: block;
     }
-
     .menu-icon {
-      font-size: 1.4rem;
-      color: #ADB7C0;
-      margin-left: auto;
       cursor: pointer;
+      color: #ADB7C0;
+      font-size: 1.4rem;
+      margin-left: auto;
     }
 
-    /* Main bookings section */
-    .bookings-content {
-      background: rgba(60, 55, 120, 0.7);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      max-width: 720px;
-      width: 90%;
-      padding: 3rem 3rem 4rem;
-      box-shadow: 0 0 30px #9a87ffcc;
-      text-align: center;
-      margin-top: 3rem;
-      user-select: text;
+    /* Booking page specific styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #202A3B;
+      color: #ADB7C0;
+      margin: 0;
+      padding: 0 1.5rem 3rem;
     }
 
-    .bookings-content h2 {
+    header.navbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background-color: #141D2F;
+      box-shadow: 0 2px 8px #A02CBD66;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #A02CBD;
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #b7aaff;
-      text-shadow: 0 0 10px #b7aaffbb;
-    }
-
-    .bookings-content p {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      color: #d1d5ffcc;
-      line-height: 1.6;
-      text-shadow: 0 0 6px #8a7fffa0;
-    }
-
-    .booking-form-placeholder {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      background: rgba(90, 80, 140, 0.4);
-      border-radius: 12px;
-      font-style: italic;
-      color: #c5c6f7cc;
-      box-shadow: 0 0 15px #8a7fffa0;
       user-select: none;
+    }
+    .star-icon {
+      width: 32px;
+      height: 32px;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      background: rgba(73, 92, 114, 0.7);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 0 20px #A02CBD99;
+    }
+    main h2 {
+      color: #A02CBD;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    main p {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      color: #c1c9d1cc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: #D8AEEE;
+      user-select: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      padding: 0.6rem 0.9rem;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      background: #141D2F;
+      color: #ADB7C0;
+      box-shadow: inset 0 0 8px #495C72;
+      transition: box-shadow 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus,
+    select:focus,
+    textarea:focus {
+      box-shadow: 0 0 10px #D8AEEE;
+      background: #1e2a43;
+      color: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    button[type="submit"] {
+      background: #A02CBD;
+      border: none;
+      color: #495C72;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      padding: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #D8AEEE;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background: #D8AEEE;
+      color: #A02CBD;
+      box-shadow: 0 0 25px #A02CBD;
+    }
+
+    @media (max-width: 650px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="navbar" role="banner">
+  <header class="navbar">
     <div class="logo">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png"
@@ -181,7 +212,7 @@
       />
       <h1>AstraMentor</h1>
     </div>
-    <nav class="nav-links" role="navigation" aria-label="Primary navigation">
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <div class="dropdown">
         <a href="tutors.html">Tutors ▼</a>
@@ -195,18 +226,75 @@
       </div>
       <a href="bookings.html" class="active">Bookings</a>
       <a href="resources.html">Resources</a>
-      <a href="#" class="menu-icon" aria-label="Menu">☰</a>
+      <a href="#" class="menu-icon">☰</a>
     </nav>
   </header>
 
-  <main class="bookings-content" role="main">
-    <h2>Book Your Tutoring Session</h2>
-    <p>Ready to take the next step in your learning journey? Choose your tutor, pick a convenient time, and get personalised support tailored just for you.</p>
-    <p>Use the form below to book a session or contact us if you have any questions.</p>
+  <main>
+    <h2>Book a Session</h2>
+    <p>Fill out the form below to schedule your tutoring session.</p>
+    <form id="bookingForm" action="#" method="POST" onsubmit="return handleSubmit(event)">
+      <label for="studentName">Your Name</label>
+      <input type="text" id="studentName" name="studentName" placeholder="Full name" required />
 
-    <div class="booking-form-placeholder" aria-live="polite" aria-atomic="true">
-      <p><em>Booking form coming soon!</em></p>
-    </div>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="tutor">Choose Tutor</label>
+      <select id="tutor" name="tutor" required>
+        <option value="" disabled selected>Select a tutor</option>
+        <option value="Abhiram">Abhiram</option>
+        <option value="Swarup">Swarup</option>
+        <option value="Avanish">Avanish</option>
+        <option value="Noah">Noah</option>
+        <option value="Rakshan">Rakshan</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required min="" />
+
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="notes">Additional Notes (optional)</label>
+      <textarea id="notes" name="notes" placeholder="Anything you'd like us to know..."></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
   </main>
+
+  <script>
+    // Set minimum date for date picker to today
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      // Grab form data
+      const form = event.target;
+      const data = {
+        studentName: form.studentName.value.trim(),
+        email: form.email.value.trim(),
+        tutor: form.tutor.value,
+        date: form.date.value,
+        time: form.time.value,
+        notes: form.notes.value.trim()
+      };
+
+      // Simple validation check (already required fields)
+      if (!data.studentName || !data.email || !data.tutor || !data.date || !data.time) {
+        alert('Please fill in all required fields.');
+        return false;
+      }
+
+      // Simulate sending data to a server (replace with actual backend)
+      alert(`Booking confirmed for ${data.studentName} with ${data.tutor} on ${data.date} at ${data.time}.`);
+
+      form.reset();
+      return false;
+    }
+  </script>
 </body>
 </html>
