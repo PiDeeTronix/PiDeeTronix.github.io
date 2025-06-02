@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Tutors | AstraMentor ⭐</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="glow-hover">AstraMentor</span>
+      <svg class="star-icon" width="20" height="20" viewBox="0 0 24 24" fill="#FFD700">
+        <path d="M12 2l2.7 6.9L22 10l-5.6 4.3L18.4 22 12 18l-6.4 4 2-7.7L2 10l7.3-1.1z"/>
+      </svg>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tutors.html" class="active">Tutors</a>
+      <a href="resources.html">Resources</a>
+      <a href="bookings.html">Bookings</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <!-- Will animate to scholar hat in styles.css -->
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <a href="#">Contact Us</a>
+    <a href="#">Testimonials</a>
+    <a href="#">Our Subjects</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="tutors-container">
+    <h1>Meet Our Tutors</h1>
+    <div class="tutor-grid">
+      <div class="tutor-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">Abhiram</div>
+          <div class="card-back">Info about Abhiram here</div>
+        </div>
+      </div>
+      <div class="tutor-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">Swarup</div>
+          <div class="card-back">Info about Swarup here</div>
+        </div>
+      </div>
+      <div class="tutor-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">Rakshan</div>
+          <div class="card-back">Info about Rakshan here</div>
+        </div>
+      </div>
+      <div class="tutor-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">Avanish</div>
+          <div class="card-back">Info about Avanish here</div>
+        </div>
+      </div>
+      <div class="tutor-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">Noah</div>
+          <div class="card-back">Info about Noah here</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Stardust Cursor -->
+  <canvas id="stardust-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
