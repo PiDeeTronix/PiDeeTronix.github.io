@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* Inline minimal styles for this example; you can move them to styles.css */
     body {
       background: linear-gradient(135deg, #2c2c54, #1b1b38);
       color: #c0c6e4;
@@ -59,8 +58,13 @@
       50% { filter: drop-shadow(0 0 15px #a599ff); transform: scale(1.1); }
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
     .nav-links a {
-      margin-left: 1.8rem;
+      margin-left: 1.5rem;
       text-decoration: none;
       color: #b5b9e1cc;
       font-weight: 600;
@@ -73,13 +77,6 @@
     .nav-links a.active {
       color: #9a87ff;
       text-shadow: 0 0 8px #9a87ffcc;
-    }
-
-    .nav-links a.menu-icon {
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #9a87ffcc;
-      margin-left: 2rem;
     }
 
     .bookings-content {
@@ -130,13 +127,12 @@
       />
       <h1>AstraMentor</h1>
     </div>
-    <nav class="nav-links">
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="tutors.html">Tutors</a>
       <a href="bookings.html" class="active">Bookings</a>
       <a href="resources.html">Resources</a>
-      <a href="#" class="menu-icon" aria-label="Menu">☰</a>
-    </nav>
+    </div>
   </header>
 
   <section class="bookings-content" role="main">
