@@ -3,77 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AstraMentor - Bookings</title>
+  <title>AstraMentor - Bookings ⭐</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <nav class="navbar">
-    <a href="index.html" class="logo glow-hover">
-      AstraMentor <span class="star-icon">★</span>
-    </a>
-    <div class="nav-links" id="navLinks">
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="glow-hover">AstraMentor</span>
+      <svg class="star-icon" width="20" height="20" viewBox="0 0 24 24" fill="#FFD700">
+        <path d="M12 2l2.7 6.9L22 10l-5.6 4.3L18.4 22 12 18l-6.4 4 2-7.7L2 10l7.3-1.1z" />
+      </svg>
+    </div>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="bookings.html" class="active">Bookings</a>
       <a href="tutors.html">Tutors</a>
       <a href="resources.html">Resources</a>
-    </div>
-    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <a href="bookings.html" class="active">Bookings</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
-  </nav>
+  </header>
 
-  <aside class="sidebar" id="sidebar">
-    <a href="contact.html">Contact Us</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="subjects.html">Our Subjects</a>
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <a href="#">Contact Us</a>
+    <a href="#">Testimonials</a>
+    <a href="#">Our Subjects</a>
   </aside>
 
-  <main class="bookings-container">
-    <h1>Book a Session</h1>
-    <form class="booking-form" id="bookingForm">
-      <label for="studentName">Student Name:</label>
-      <input type="text" id="studentName" name="studentName" placeholder="Your full name" required />
+  <!-- Bookings Section -->
+  <main class="hero-section">
+    <div class="hero-content">
+      <h1>📅 Book a Session</h1>
+      <p>Secure your tutoring session in just a few clicks.</p>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+      <form class="booking-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
 
-      <label for="subject">Subject:</label>
-      <select id="subject" name="subject" required>
-        <option value="" disabled selected>Select subject</option>
-        <option>Mathematics</option>
-        <option>Physics</option>
-        <option>Chemistry</option>
-        <option>Biology</option>
-        <option>Computer Science</option>
-        <option>English</option>
-        <option>French</option>
-        <option>Design Technology</option>
-        <option>Business Studies</option>
-      </select>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
 
-      <label for="tutor">Preferred Tutor:</label>
-      <select id="tutor" name="tutor" required>
-        <option value="" disabled selected>Select tutor</option>
-        <option>Abhiram</option>
-        <option>Swarup</option>
-        <option>Rakshan</option>
-        <option>Avanish</option>
-        <option>Noah</option>
-      </select>
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+          <option value="">-- Select a subject --</option>
+          <option value="maths">Maths</option>
+          <option value="science">Science</option>
+          <option value="english">English</option>
+          <option value="computer-science">Computer Science</option>
+        </select>
 
-      <label for="date">Preferred Date:</label>
-      <input type="date" id="date" name="date" required />
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required />
 
-      <label for="time">Preferred Time:</label>
-      <input type="time" id="time" name="time" required />
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time" required />
 
-      <button type="submit" class="btn btn-primary">Submit Booking</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Submit Booking</button>
+      </form>
+    </div>
   </main>
 
+  <!-- Stardust Cursor -->
+  <canvas id="stardust-canvas"></canvas>
+
+  <script src="script.js"></script>
 </body>
 </html>
