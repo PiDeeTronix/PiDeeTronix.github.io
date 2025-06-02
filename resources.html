@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* Navbar and dropdown styles same as before */
     .nav-links {
       position: relative;
       display: flex;
@@ -15,18 +14,58 @@
       align-items: center;
     }
 
-    .nav-links > a {
+    .nav-links > .dropdown {
+      position: relative;
+    }
+
+    .nav-links > .dropdown > a {
+      cursor: pointer;
       color: #ADB7C0;
       font-weight: 600;
       padding: 0.5rem 0.7rem;
-      text-decoration: none;
+      display: inline-block;
       transition: color 0.3s ease;
+      user-select: none;
     }
-    .nav-links > a:hover,
-    .nav-links > a.active {
+
+    .nav-links > .dropdown:hover > a,
+    .nav-links > .dropdown > a.active {
       color: #A02CBD;
       text-shadow: 0 0 10px #D8AEEE;
       font-weight: 700;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 2.8rem;
+      left: 0;
+      background: rgba(73, 92, 114, 0.85);
+      box-shadow: 0 4px 10px #A02CBD88;
+      border-radius: 8px;
+      min-width: 150px;
+      z-index: 10;
+      padding: 0.5rem 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: #ADB7C0;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background: #A02CBD;
+      color: #495C72;
+      font-weight: 700;
+      text-shadow: 0 0 8px #D8AEEE;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .menu-icon {
@@ -36,73 +75,37 @@
       margin-left: auto;
     }
 
-    /* Page container */
-    main.resources-content {
+    .resources-section {
+      padding: 4rem 2rem;
       max-width: 900px;
-      margin: 2.5rem auto 4rem auto;
-      padding: 0 1rem;
-      font-family: 'Inter', sans-serif;
-      color: #E0E6F0;
-      background: rgba(41, 34, 73, 0.6);
-      border-radius: 12px;
-      box-shadow: 0 0 15px #A02CBD55;
+      margin: auto;
+      color: #ADB7C0;
     }
 
-    main.resources-content h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 2.4rem;
+    .resources-section h2 {
+      font-size: 2.2rem;
       color: #A02CBD;
-      margin-bottom: 1rem;
       text-align: center;
-      text-shadow: 0 0 8px #D8AEEE;
-    }
-
-    main.resources-content p {
-      font-size: 1.1rem;
       margin-bottom: 2rem;
-      text-align: center;
-      color: #BCC9E3;
-    }
-
-    ul.resource-list {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-    }
-
-    ul.resource-list li {
-      background: #2D2B48;
-      margin: 0.5rem 0;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #A02CBD44;
-    }
-
-    ul.resource-list li a {
-      display: block;
-      padding: 1rem 1.4rem;
-      color: #D8AEEE;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: background 0.3s ease, color 0.3s ease;
-      border-radius: 8px;
-    }
-
-    ul.resource-list li a:hover {
-      background: #A02CBD;
-      color: #495C72;
       text-shadow: 0 0 8px #D8AEEE;
-      font-weight: 700;
     }
 
-    p.footer-note {
-      text-align: center;
-      font-style: italic;
-      font-size: 1rem;
-      color: #8F8FB3;
-      margin-top: 2rem;
+    .resource-item {
+      background: rgba(73, 92, 114, 0.2);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(160, 44, 189, 0.3);
+      margin-bottom: 1.5rem;
+    }
+
+    .resource-item h3 {
+      margin-bottom: 0.5rem;
+      color: #A02CBD;
+    }
+
+    .resource-item a {
+      color: #D8AEEE;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -118,25 +121,41 @@
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="tutors.html">Tutors</a>
+      <div class="dropdown">
+        <a href="tutors.html">Tutors ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Abhiram</a>
+          <a href="#">Swarup</a>
+          <a href="#">Avanish</a>
+          <a href="#">Noah</a>
+          <a href="#">Rakshan</a>
+        </div>
+      </div>
       <a href="bookings.html">Bookings</a>
       <a href="resources.html" class="active">Resources</a>
       <a href="#" class="menu-icon">☰</a>
     </nav>
   </header>
 
-  <main class="resources-content">
-    <h2>Downloadable Resources</h2>
-    <p>Access study guides, worksheets, and helpful materials to support your learning journey.</p>
+  <section class="resources-section">
+    <h2>Study Resources</h2>
+    <div class="resource-item">
+      <h3>GCSE Maths Notes</h3>
+      <p>A comprehensive set of notes covering all major GCSE Maths topics.</p>
+      <a href="#">Download PDF</a>
+    </div>
 
-    <ul class="resource-list">
-      <li><a href="resources/maths_guide.pdf" download>Maths Study Guide (PDF)</a></li>
-      <li><a href="resources/chemistry_formulas.pdf" download>Chemistry Formulas Sheet (PDF)</a></li>
-      <li><a href="resources/french_vocab.xlsx" download>French Vocabulary List (Excel)</a></li>
-      <li><a href="resources/coding_basics.zip" download>Coding Basics Pack (ZIP)</a></li>
-    </ul>
+    <div class="resource-item">
+      <h3>Computer Science Flashcards</h3>
+      <p>Interactive flashcards to test your knowledge on programming and theory.</p>
+      <a href="#">View Flashcards</a>
+    </div>
 
-    <p class="footer-note">More resources will be added regularly — check back soon!</p>
-  </main>
+    <div class="resource-item">
+      <h3>Chemistry Revision Guide</h3>
+      <p>A visual and concise guide to key Chemistry concepts and reactions.</p>
+      <a href="#">Download PDF</a>
+    </div>
+  </section>
 </body>
 </html>
