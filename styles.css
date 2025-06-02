@@ -131,7 +131,8 @@ h1 {
   transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   top: 0;
   left: 0;
@@ -152,14 +153,9 @@ h1 {
   transform: rotateY(180deg);
 }
 
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-}
 /* Hero Section */
 .hero-section {
-  height: calc(100vh - 80px); /* full viewport minus navbar */
+  height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,25 +229,6 @@ h1 {
   color: #121250;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 1rem;
-  }
-}
 /* Booking Form Styles */
 .bookings-container {
   max-width: 500px;
@@ -323,7 +300,36 @@ h1 {
   box-shadow: 0 8px 25px rgba(110, 120, 255, 0.8);
 }
 
-/* Responsive tweaks */
+/* Responsive */
+
+/* Hide nav links on small screens */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Hero Section responsive tweaks */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Booking Form responsive tweaks */
 @media (max-width: 600px) {
   .bookings-container {
     margin: 2rem 1rem 3rem 1rem;
