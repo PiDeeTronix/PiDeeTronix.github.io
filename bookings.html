@@ -7,33 +7,38 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* Keep the nav spacing consistent */
+    /* NAVBAR STYLES FOR CONSISTENT SPACING */
+
     .nav-links {
-      position: relative;
       display: flex;
-      gap: 1.2rem;  /* consistent spacing */
       align-items: center;
+      /* removed gap to avoid uneven spacing */
     }
 
-    .nav-links > .dropdown {
-      position: relative;
-    }
-
+    .nav-links > a,
     .nav-links > .dropdown > a {
-      cursor: pointer;
       color: #ADB7C0;
       font-weight: 600;
-      padding: 0.5rem 0.7rem;
-      display: inline-block;
-      transition: color 0.3s ease;
+      padding: 0.5rem 0.8rem;
+      text-decoration: none;
       user-select: none;
+      white-space: nowrap;
+      transition: color 0.3s ease;
+      margin-right: 1.3rem; /* consistent spacing */
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .nav-links > a:last-child,
+    .nav-links > .dropdown > a:last-child {
+      margin-right: 0; /* no margin on last item */
     }
 
     .nav-links > .dropdown:hover > a,
-    .nav-links > .dropdown > a.active {
+    .nav-links > a.active {
       color: #A02CBD;
-      text-shadow: 0 0 10px #D8AEEE;
       font-weight: 700;
+      text-shadow: 0 0 10px #D8AEEE;
     }
 
     .dropdown-content {
@@ -77,81 +82,68 @@
       margin-left: auto;
     }
 
-    /* Booking form styles */
-    .booking-section {
-      max-width: 600px;
-      margin: 3rem auto;
-      background: #495C72;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #A02CBD88;
-      color: #ADB7C0;
+    /* Additional styling for bookings page content */
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
       font-family: 'Inter', sans-serif;
+      color: #495C72;
+      padding: 0 1rem;
     }
 
-    .booking-section h2 {
-      font-family: 'Orbitron', sans-serif;
+    h2 {
       color: #A02CBD;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      text-shadow: 0 0 10px #D8AEEE;
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
+      background: rgba(73, 92, 114, 0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #A02CBD33;
     }
 
     label {
+      display: block;
+      margin-bottom: 0.4rem;
       font-weight: 600;
-      color: #D8AEEE;
     }
 
     input, select, textarea {
-      padding: 0.6rem 0.8rem;
-      border: none;
-      border-radius: 6px;
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1.2rem;
+      border: 1.5px solid #A02CBD;
+      border-radius: 5px;
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
-      background-color: #36475A;
-      color: #E5E5E5;
-      transition: background-color 0.3s ease;
+      color: #495C72;
+      background: white;
+      transition: border-color 0.3s ease;
     }
 
     input:focus, select:focus, textarea:focus {
+      border-color: #D8AEEE;
       outline: none;
-      background-color: #556B86;
-      box-shadow: 0 0 8px #A02CBD;
-      color: white;
     }
 
     button {
       background-color: #A02CBD;
-      color: #495C72;
-      font-weight: 700;
-      padding: 0.75rem;
+      color: #fff;
       border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
       border-radius: 8px;
       cursor: pointer;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
+      box-shadow: 0 0 10px #D8AEEE;
       transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #D8AEEE;
-      color: #495C72;
-      text-shadow: 0 0 10px #A02CBD;
-    }
-
-    /* Responsive */
-    @media (max-width: 640px) {
-      .booking-section {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-      }
+      background-color: #8B229D;
     }
   </style>
 </head>
@@ -162,6 +154,7 @@
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png"
         alt="Star Logo"
         class="star-icon"
+        style="height: 40px; margin-right: 0.7rem;"
       />
       <h1>AstraMentor</h1>
     </div>
@@ -183,14 +176,14 @@
     </nav>
   </header>
 
-  <section class="booking-section">
+  <main>
     <h2>Book a Session</h2>
     <form action="#" method="POST">
-      <label for="student-name">Your Name</label>
-      <input type="text" id="student-name" name="student-name" required placeholder="Enter your full name" />
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
 
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required placeholder="example@email.com" />
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
       <label for="tutor">Select Tutor</label>
       <select id="tutor" name="tutor" required>
@@ -203,16 +196,16 @@
       </select>
 
       <label for="date">Preferred Date</label>
-      <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>" />
+      <input type="date" id="date" name="date" required />
 
       <label for="time">Preferred Time</label>
       <input type="time" id="time" name="time" required />
 
       <label for="notes">Additional Notes</label>
-      <textarea id="notes" name="notes" rows="4" placeholder="Any additional information..."></textarea>
+      <textarea id="notes" name="notes" rows="4" placeholder="Any extra details..."></textarea>
 
       <button type="submit">Book Now</button>
     </form>
-  </section>
+  </main>
 </body>
 </html>
