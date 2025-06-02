@@ -172,3 +172,83 @@ body::before {
     0 0 25px #0099ffcc,
     0 0 40px #0044ccbb;
 }
+
+
+/* === Resources page styles === */
+
+.resources-content {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 2rem 2rem 3rem;
+  text-align: center;
+  color: #eee;
+  background: rgba(20, 20, 40, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(8px);
+  font-size: 1.1rem;
+}
+
+.resources-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+.resources-content p {
+  color: #ccc;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-list li {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1.5px solid #ffd700;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 0 10px #ffd70033;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-list li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px #ffd700cc;
+}
+
+.resource-list a {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.footer-note {
+  font-style: italic;
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* Active link highlight */
+.nav-links a.active,
+.nav-links a:hover {
+  color: #ffd700;
+  font-weight: 700;
+  text-shadow: 0 0 6px #ffd700aa;
+}
