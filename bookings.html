@@ -16,20 +16,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
     }
 
     .navbar {
       width: 100%;
-      max-width: 900px;
+      padding: 1rem 2rem;
+      background: rgba(30, 30, 60, 0.85);
+      box-shadow: 0 0 15px #7b6cff88;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(30, 30, 60, 0.8);
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #7b6cff88;
-      margin-bottom: 3rem;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -58,35 +55,89 @@
       50% { filter: drop-shadow(0 0 15px #a599ff); transform: scale(1.1); }
     }
 
+    /* Navbar links */
     .nav-links {
       display: flex;
+      gap: 1.2rem;
       align-items: center;
     }
 
-    .nav-links a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #b5b9e1cc;
+    .nav-links > a,
+    .nav-links > .dropdown > a {
+      cursor: pointer;
+      color: #ADB7C0;
       font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s, text-shadow 0.3s;
+      padding: 0.5rem 0.7rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .nav-links > a:hover,
+    .nav-links > .dropdown > a:hover,
+    .nav-links > .dropdown > a.active,
+    .nav-links > a.active {
+      color: #A02CBD;
+      text-shadow: 0 0 10px #D8AEEE;
+      font-weight: 700;
+    }
+
+    /* Dropdown styling */
+    .dropdown {
       position: relative;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #9a87ff;
-      text-shadow: 0 0 8px #9a87ffcc;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 2.8rem;
+      left: 0;
+      background: rgba(73, 92, 114, 0.85);
+      box-shadow: 0 4px 10px #A02CBD88;
+      border-radius: 8px;
+      min-width: 150px;
+      z-index: 10;
+      padding: 0.5rem 0;
     }
 
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: #ADB7C0;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background: #A02CBD;
+      color: #495C72;
+      font-weight: 700;
+      text-shadow: 0 0 8px #D8AEEE;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .menu-icon {
+      font-size: 1.4rem;
+      color: #ADB7C0;
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    /* Bookings content */
     .bookings-content {
       background: rgba(60, 55, 120, 0.7);
       backdrop-filter: blur(10px);
       border-radius: 15px;
       max-width: 720px;
+      width: 90%;
       padding: 3rem 3rem 4rem;
       box-shadow: 0 0 30px #9a87ffcc;
       text-align: center;
+      margin-top: 3rem;
     }
 
     .bookings-content h2 {
@@ -127,12 +178,22 @@
       />
       <h1>AstraMentor</h1>
     </div>
-    <div class="nav-links">
+    <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="tutors.html">Tutors</a>
+      <div class="dropdown">
+        <a href="tutors.html">Tutors ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Abhiram</a>
+          <a href="#">Swarup</a>
+          <a href="#">Avanish</a>
+          <a href="#">Noah</a>
+          <a href="#">Rakshan</a>
+        </div>
+      </div>
       <a href="bookings.html" class="active">Bookings</a>
       <a href="resources.html">Resources</a>
-    </div>
+      <a href="#" class="menu-icon" aria-label="Menu">☰</a> <!-- Do not remove -->
+    </nav>
   </header>
 
   <section class="bookings-content" role="main">
@@ -140,7 +201,6 @@
     <p>Ready to take the next step in your learning journey? Choose your tutor, pick a convenient time, and get personalised support tailored just for you.</p>
     <p>Use the form below to book a session or contact us if you have any questions.</p>
 
-    <!-- Placeholder for booking form or payment widget -->
     <div class="booking-form-placeholder">
       <p><em>Booking form coming soon!</em></p>
     </div>
