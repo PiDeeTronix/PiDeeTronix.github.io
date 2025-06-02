@@ -1,105 +1,149 @@
-/* Navbar and logo */
-.logo h1 {
-  color: #A02CBD; /* Main purple */
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 8px #D8AEEE;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstraMentor</title>
 
-/* Navbar background */
-.navbar {
-  background: rgba(73, 92, 114, 0.85); /* #495C72 with transparency */
-  box-shadow: 0 0 12px #A02CBDaa;
-  border-bottom: 1px solid #D8AEEE88;
-}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
 
-/* Nav links */
-.nav-links a {
-  color: #ADB7C0; /* muted grey */
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+  <!-- Internal CSS -->
+  <style>
+    /* General Styles */
+    body {
+      background: radial-gradient(circle at center, #495C72, #718D8F 60%, #ADB7C0 90%);
+      color: #D8AEEE;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #A02CBD;
-  text-shadow: 0 0 10px #D8AEEE;
-  font-weight: 700;
-}
+    /* Navbar Styles */
+    .navbar {
+      background: rgba(73, 92, 114, 0.85);
+      box-shadow: 0 0 12px #A02CBDaa;
+      border-bottom: 1px solid #D8AEEE88;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
 
-/* Star icon */
-.star-icon {
-  filter: drop-shadow(0 0 6px #A02CBDcc);
-  width: 36px;
-  height: 36px;
-  animation: starPulse 3s ease-in-out infinite;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-@keyframes starPulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 6px #A02CBDcc);
-    transform: scale(1);
-  }
-  50% {
-    filter: drop-shadow(0 0 20px #D8AEEEcc);
-    transform: scale(1.1);
-  }
-}
+    .logo h1 {
+      color: #A02CBD;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 8px #D8AEEE;
+      margin: 0;
+    }
 
-/* Body background */
-body {
-  background: radial-gradient(circle at center, #495C72, #718D8F 60%, #ADB7C0 90%);
-  color: #D8AEEE;
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  min-height: 100vh;
-}
+    .star-icon {
+      filter: drop-shadow(0 0 6px #A02CBDcc);
+      width: 36px;
+      height: 36px;
+      animation: starPulse 3s ease-in-out infinite;
+    }
 
-/* Hero section */
-.hero {
-  max-width: 720px;
-  margin: 4rem auto;
-  padding: 2rem;
-  text-align: center;
-  background: rgba(73, 92, 114, 0.7); /* dark transparent overlay */
-  border-radius: 12px;
-  box-shadow: 0 0 30px #A02CBD88;
-  backdrop-filter: blur(8px);
-}
+    @keyframes starPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 6px #A02CBDcc);
+        transform: scale(1);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #D8AEEEcc);
+        transform: scale(1.1);
+      }
+    }
 
-.hero h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.8rem;
-  color: #A02CBD;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 12px #D8AEEEcc;
-}
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
 
-.hero p {
-  color: #ADB7C0;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
+    .nav-links a {
+      color: #ADB7C0;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
 
-.booking-form-placeholder p {
-  font-style: italic;
-  color: #ADB7C0aa;
-  font-size: 1.1rem;
-}
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #A02CBD;
+      text-shadow: 0 0 10px #D8AEEE;
+      font-weight: 700;
+    }
 
-/* Button style (if used later) */
-.btn-primary {
-  background: linear-gradient(135deg, #A02CBD, #D8AEEE);
-  color: #495C72;
-  font-weight: 700;
-  padding: 0.9rem 2.2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 0 15px #A02CBDcc;
-  transition: background 0.3s ease;
-}
+    /* Hero Section */
+    .hero {
+      max-width: 720px;
+      margin: 4rem auto;
+      padding: 2rem;
+      text-align: center;
+      background: rgba(73, 92, 114, 0.7);
+      border-radius: 12px;
+      box-shadow: 0 0 30px #A02CBD88;
+      backdrop-filter: blur(8px);
+    }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, #D8AEEE, #A02CBD);
-  box-shadow: 0 0 25px #D8AEEEcc;
-}
+    .hero h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      color: #A02CBD;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 12px #D8AEEEcc;
+    }
+
+    .hero p {
+      color: #ADB7C0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #A02CBD, #D8AEEE);
+      color: #495C72;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #A02CBDcc;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #D8AEEE, #A02CBD);
+      box-shadow: 0 0 25px #D8AEEEcc;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.png/120px-Plain_Yellow_Star.png" alt="Star Logo" class="star-icon" />
+      <h1>AstraMentor</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tutors.html">Tutors</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="resources.html">Resources</a>
+      <a href="#" class="menu-icon">☰</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Launching Ambitions, One Star at a Time</h2>
+    <p>Personalised tutoring designed to help you reach your full potential.</p>
+    <a href="#" class="btn-primary">Meet Our Tutors</a>
+  </section>
+</body>
+</html>
